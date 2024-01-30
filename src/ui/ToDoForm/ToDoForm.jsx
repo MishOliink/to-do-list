@@ -1,9 +1,9 @@
 // React Library
-import React from "react";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 
 // Styles
-import styles from'./ToDoForm.module.css'
+import styles from './ToDoForm.module.css';
 
 const ToDoForm = ({ addItem }) => {
   const [text, setText] = useState('');
@@ -11,20 +11,20 @@ const ToDoForm = ({ addItem }) => {
     event.preventDefault();
     addItem(text);
     setText('');
-  }
+  };
 
   return (
     <div className={styles.toDoFormContainer}>
       <form onSubmit={onSubmitHandler}>
         <input
-          placeholder='Enter new ToDo'
+          placeholder="Enter new ToDo"
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
-        <button type='submit'>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default ToDoForm
+export default ToDoForm;
